@@ -3,18 +3,34 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "cross-env VITE_MODE=local vite",
+    "build:dev": "cross-env VITE_MODE=dev vite build",
+    "build:test": "cross-env VITE_MODE=test vite build",
+    "build:prod": "ross-env VITE_MODE=prod vite build",
+    "preview": "npm build:prod && vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@stitches/react": "^1.2.8",
+    "antd": "^4.24.1",
+    "jotai": "^1.9.1",
+    "moment": "^2.29.4",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.8.1",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.4.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-legacy": "^2.3.1",
     "@vitejs/plugin-react": "^1.3.0",
-    "vite": "^2.9.9"
+    "autoprefixer": "^10.4.13",
+    "cross-env": "^7.0.3",
+    "less": "^4.1.3",
+    "postcss-less": "^6.0.0",
+    "vite": "^2.9.9",
+    "vite-plugin-style-import": "^1.1.0"
   }
 }
